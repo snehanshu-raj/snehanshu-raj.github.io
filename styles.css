@@ -210,6 +210,7 @@ body {
 .hero-visual {
     position: relative;
     height: 400px;
+    width: 100%;
 }
 
 .floating-elements {
@@ -221,63 +222,122 @@ body {
 .floating-item {
     position: absolute;
     animation: float 6s ease-in-out infinite;
+    z-index: 1;
 }
 
 .floating-item img {
-    width: clamp(40px, 6vw, 75px);
-    height: clamp(40px, 6vw, 75px);
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* Positioning */
-.floating-item:nth-child(1) {
-    top: 15%;
-    left: 15%;
+/* Updated positioning for better visibility */
+.floating-item:nth-child(1) { /* Docker */
+    top: 10%;
+    left: 10%;
     animation-delay: 0s;
 }
 
-.floating-item:nth-child(2) {
-    top: 65%;
-    right: 20%;
+.floating-item:nth-child(2) { /* Python */
+    top: 70%;
+    right: 15%;
     animation-delay: -2s;
 }
 
-.floating-item:nth-child(3) {
+.floating-item:nth-child(3) { /* MongoDB */
     top: 5%;
-    right: 25%;
+    right: 20%;
     animation-delay: -4s;
 }
 
-.floating-item:nth-child(4) {
-    bottom: 25%;
-    left: 25%;
+.floating-item:nth-child(4) { /* AWS */
+    bottom: 20%;
+    left: 20%;
     animation-delay: -1s;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+.floating-item:nth-child(5) { /* Redis */
+    top: 40%;
+    left: 5%;
+    animation-delay: -3s;
 }
 
-/* Tablet Styles */
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
+.floating-item:nth-child(6) { /* MySQL */
+    bottom: 40%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+.floating-item:nth-child(7) { /* GCP */
+    top: 8%;
+    left: 45%;
+    animation-delay: -1.5s;
+}
+
+.floating-item:nth-child(8) { /* Agent */
+    bottom: 15%;
+    right: 45%;
+    animation-delay: -3.5s;
+}
+
+.floating-item:nth-child(9) { /* APIs */
+    top: 55%;
+    right: 8%;
+    animation-delay: -2.5s;
+}
+
+.floating-item:nth-child(10) { /* Qdrant */
+    bottom: 35%;
+    left: 55%;
+    animation-delay: -4.5s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(5deg); 
+    }
+}
+
+/* Ensure all items are visible on different screen sizes */
+@media (max-width: 1024px) {
+    .floating-item:nth-child(n+7) {
+        display: block; /* Keep them visible on tablets */
     }
     
+    .floating-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
     .hero-visual {
         height: 250px;
-        order: -1;
     }
     
-    .hero-buttons {
-        justify-content: center;
+    .floating-item img {
+        width: 45px;
+        height: 45px;
     }
     
-    .floating-item:nth-child(n+3) {
+    /* Hide some items on mobile for performance */
+    .floating-item:nth-child(n+6) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-item img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .floating-item:nth-child(n+4) {
         display: none;
     }
 }

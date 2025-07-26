@@ -94,7 +94,7 @@ function animateCounters() {
     counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
         let count = 0;
-        const increment = target / 100; // Very fast counting
+        const increment = target / 200; // Very fast counting
         const showPlus = counter.getAttribute('data-plus') === 'true';
         
         const updateCounter = () => {
