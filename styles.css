@@ -123,56 +123,91 @@ body {
 }
 
 /* Hero Section */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Reduced padding for mobile */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Reduced height for mobile */
+}
+
+.nav-logo .logo-text {
+    font-size: 20px; /* Smaller on mobile */
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Section - Mobile Responsive */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding: 80px 0 40px; /* Add top padding for navbar */
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px; /* Consistent mobile padding */
     z-index: 2;
+    width: 100%;
 }
 
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 40px; /* Reduced gap */
     align-items: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem; /* Smaller for mobile */
     font-weight: 800;
     margin-bottom: 10px;
     line-height: 1.2;
+    word-break: break-word; /* Prevent overflow */
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Smaller for mobile */
     color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 20px;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Smaller for mobile */
     color: var(--text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 25px; /* Reduced margin */
     line-height: 1.6;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .btn {
-    padding: 12px 30px;
+    padding: 10px 25px; /* Smaller buttons */
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
@@ -180,6 +215,154 @@ body {
     display: inline-block;
     position: relative;
     overflow: hidden;
+    font-size: 0.9rem; /* Smaller text */
+}
+
+/* Floating elements - Mobile optimized */
+.hero-visual {
+    position: relative;
+    height: 300px; /* Reduced height */
+}
+
+.floating-item img {
+    width: 50px; /* Smaller icons */
+    height: 50px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+    .nav-container {
+        height: 50px; /* Even smaller on mobile */
+        padding: 0 15px;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 18px;
+    }
+    
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        background: var(--text-primary);
+        margin: 2px 0;
+        transition: 0.3s;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 50px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 20px 0;
+        gap: 10px;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hero {
+        min-height: 100vh;
+        padding: 60px 0 20px; /* Adjust for smaller navbar */
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr; /* Single column */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-title {
+        font-size: 2rem; /* Further reduced */
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 200px; /* Fixed width for mobile */
+        text-align: center;
+        padding: 12px 20px;
+    }
+    
+    .hero-visual {
+        height: 200px; /* Much smaller on mobile */
+        order: -1; /* Move visual above text */
+    }
+    
+    .floating-item img {
+        width: 35px; /* Even smaller icons */
+        height: 35px;
+    }
+    
+    /* Hide some floating items on mobile */
+    .floating-item:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        width: 180px;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .floating-item:nth-child(n+4) {
+        display: none; /* Show even fewer items */
+    }
+}
+
+/* Viewport meta tag fix */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .btn-primary {
