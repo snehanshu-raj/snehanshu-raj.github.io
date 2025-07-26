@@ -209,8 +209,10 @@ body {
 /* Floating Elements */
 .hero-visual {
     position: relative;
-    height: 400px;
     width: 100%;
+    height: 400px; /* Ensure enough height for all items */
+    overflow: visible; /* Don't clip floating items */
+    z-index: 1;
 }
 
 .floating-elements {
@@ -223,6 +225,8 @@ body {
     position: absolute;
     animation: float 6s ease-in-out infinite;
     z-index: 1;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .floating-item img {
@@ -233,65 +237,75 @@ body {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* Updated positioning for better visibility */
+/* Position each floating item so they don't overlap and all are visible */
 .floating-item:nth-child(1) { /* Docker */
     top: 10%;
     left: 10%;
     animation-delay: 0s;
+    z-index: 10;
 }
 
-.floating-item:nth-child(2) { /* Python */
-    top: 70%;
+.floating-item:nth-child(2) { /* Qdrant */
+    top: 65%;
     right: 15%;
     animation-delay: -2s;
+    z-index: 9;
 }
 
-.floating-item:nth-child(3) { /* MongoDB */
+.floating-item:nth-child(3) { /* Python */
     top: 5%;
-    right: 20%;
+    right: 25%;
     animation-delay: -4s;
+    z-index: 8;
 }
 
-.floating-item:nth-child(4) { /* AWS */
+.floating-item:nth-child(4) { /* MongoDB */
     bottom: 20%;
     left: 20%;
     animation-delay: -1s;
+    z-index: 7;
 }
 
 .floating-item:nth-child(5) { /* Redis */
     top: 40%;
     left: 5%;
     animation-delay: -3s;
+    z-index: 6;
 }
 
 .floating-item:nth-child(6) { /* MySQL */
     bottom: 40%;
     right: 10%;
     animation-delay: -5s;
+    z-index: 5;
 }
 
-.floating-item:nth-child(7) { /* GCP */
+.floating-item:nth-child(7) { /* AWS */
     top: 8%;
     left: 45%;
     animation-delay: -1.5s;
+    z-index: 4;
 }
 
-.floating-item:nth-child(8) { /* Agent */
+.floating-item:nth-child(8) { /* GCP */
     bottom: 15%;
     right: 45%;
     animation-delay: -3.5s;
+    z-index: 3;
 }
 
-.floating-item:nth-child(9) { /* APIs */
+.floating-item:nth-child(9) { /* AI Agent */
     top: 55%;
     right: 8%;
     animation-delay: -2.5s;
+    z-index: 2;
 }
 
-.floating-item:nth-child(10) { /* Qdrant */
+.floating-item:nth-child(10) { /* MCP/APIs */
     bottom: 35%;
     left: 55%;
     animation-delay: -4.5s;
+    z-index: 1;
 }
 
 @keyframes float {
@@ -303,12 +317,17 @@ body {
     }
 }
 
-/* Ensure all items are visible on different screen sizes */
+/* Hover effects */
+.floating-item:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .floating-item:nth-child(n+7) {
-        display: block; /* Keep them visible on tablets */
+        display: block; /* Keep all visible on tablets */
     }
-    
     .floating-item img {
         width: 60px;
         height: 60px;
@@ -317,15 +336,13 @@ body {
 
 @media (max-width: 768px) {
     .hero-visual {
-        height: 250px;
+        height: 300px;
     }
-    
     .floating-item img {
         width: 45px;
         height: 45px;
     }
-    
-    /* Hide some items on mobile for performance */
+    /* Show fewer on mobile for performance */
     .floating-item:nth-child(n+6) {
         display: none;
     }
@@ -336,7 +353,6 @@ body {
         width: 35px;
         height: 35px;
     }
-    
     .floating-item:nth-child(n+4) {
         display: none;
     }
