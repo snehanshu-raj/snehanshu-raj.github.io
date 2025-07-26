@@ -209,10 +209,7 @@ body {
 /* Floating Elements */
 .hero-visual {
     position: relative;
-    width: 100%;
-    height: 400px; /* Ensure enough height for all items */
-    overflow: visible; /* Don't clip floating items */
-    z-index: 1;
+    height: 400px;
 }
 
 .floating-elements {
@@ -224,136 +221,63 @@ body {
 .floating-item {
     position: absolute;
     animation: float 6s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .floating-item img {
-    width: 75px;
-    height: 75px;
+    width: clamp(40px, 6vw, 75px);
+    height: clamp(40px, 6vw, 75px);
     object-fit: contain;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* Position each floating item so they don't overlap and all are visible */
-.floating-item:nth-child(1) { /* Docker */
-    top: 10%;
-    left: 10%;
+/* Positioning */
+.floating-item:nth-child(1) {
+    top: 15%;
+    left: 15%;
     animation-delay: 0s;
-    z-index: 10;
 }
 
-.floating-item:nth-child(2) { /* Qdrant */
+.floating-item:nth-child(2) {
     top: 65%;
-    right: 15%;
+    right: 20%;
     animation-delay: -2s;
-    z-index: 9;
 }
 
-.floating-item:nth-child(3) { /* Python */
+.floating-item:nth-child(3) {
     top: 5%;
     right: 25%;
     animation-delay: -4s;
-    z-index: 8;
 }
 
-.floating-item:nth-child(4) { /* MongoDB */
-    bottom: 20%;
-    left: 20%;
+.floating-item:nth-child(4) {
+    bottom: 25%;
+    left: 25%;
     animation-delay: -1s;
-    z-index: 7;
-}
-
-.floating-item:nth-child(5) { /* Redis */
-    top: 40%;
-    left: 5%;
-    animation-delay: -3s;
-    z-index: 6;
-}
-
-.floating-item:nth-child(6) { /* MySQL */
-    bottom: 40%;
-    right: 10%;
-    animation-delay: -5s;
-    z-index: 5;
-}
-
-.floating-item:nth-child(7) { /* AWS */
-    top: 8%;
-    left: 45%;
-    animation-delay: -1.5s;
-    z-index: 4;
-}
-
-.floating-item:nth-child(8) { /* GCP */
-    bottom: 15%;
-    right: 45%;
-    animation-delay: -3.5s;
-    z-index: 3;
-}
-
-.floating-item:nth-child(9) { /* AI Agent */
-    top: 55%;
-    right: 8%;
-    animation-delay: -2.5s;
-    z-index: 2;
-}
-
-.floating-item:nth-child(10) { /* MCP/APIs */
-    bottom: 35%;
-    left: 55%;
-    animation-delay: -4.5s;
-    z-index: 1;
 }
 
 @keyframes float {
-    0%, 100% { 
-        transform: translateY(0px) rotate(0deg); 
-    }
-    50% { 
-        transform: translateY(-20px) rotate(5deg); 
-    }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
-/* Hover effects */
-.floating-item:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .floating-item:nth-child(n+7) {
-        display: block; /* Keep all visible on tablets */
-    }
-    .floating-item img {
-        width: 60px;
-        height: 60px;
-    }
-}
-
+/* Tablet Styles */
 @media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
     .hero-visual {
-        height: 300px;
+        height: 250px;
+        order: -1;
     }
-    .floating-item img {
-        width: 45px;
-        height: 45px;
+    
+    .hero-buttons {
+        justify-content: center;
     }
-    /* Show fewer on mobile for performance */
-    .floating-item:nth-child(n+6) {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-item img {
-        width: 35px;
-        height: 35px;
-    }
-    .floating-item:nth-child(n+4) {
+    
+    .floating-item:nth-child(n+3) {
         display: none;
     }
 }
@@ -385,10 +309,6 @@ body {
     .btn {
         width: 200px;
         text-align: center;
-    }
-    
-    .floating-item:nth-child(n+3) {
-        display: none;
     }
     
     .floating-item img {
