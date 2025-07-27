@@ -239,7 +239,8 @@ body {
 
 .floating-item:nth-child(2) {
     top: 65%;
-    right: 20%;
+    right: 50%;
+    left: 50%;
     animation-delay: -2s;
 }
 
@@ -255,61 +256,78 @@ body {
     animation-delay: -1s;
 }
 
+.floating-item:nth-child(5) {
+    top: 35%;
+    left: 60%;
+    animation-delay: -3s;
+}
+
+.floating-item:nth-child(6) {
+    bottom: 20%;
+    right: 30%;
+    animation-delay: -2.5s;
+}
+
+.floating-item:nth-child(7) {
+    top: 50%;
+    right: 10%;
+    animation-delay: -1.5s;
+}
+
+.floating-item:nth-child(8) {
+    bottom: 10%;
+    left: 10%;
+    animation-delay: -3.5s;
+}
+
+.floating-item:nth-child(9) {
+    top: 10%;
+    left: 75%;
+    animation-delay: -1.2s;
+}
+
+.floating-item:nth-child(10) {
+    bottom: 40%;
+    right: 15%;
+    animation-delay: -0.8s;
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
 }
 
-/* Tablet Styles */
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .hero-visual {
-        height: 250px;
-        order: -1;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-}
-
 /* Tablet and Mobile Styles */
 @media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
+  .hero-visual {
+    height: 80px;          /* limit height */
+    max-width: 100vw;      /* do not overflow viewport width */
+    padding: 10px 0;
+    overflow: hidden;      /* hide overflow here */
+  }
 
-    .hero-visual {
-        height: auto;
-        order: -1;
-        padding: 10px 0;
-    }
+  .floating-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;      /* enable horizontal scroll only here */
+    width: 100%;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  }
 
-    .floating-elements {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        position: relative;
-        height: auto;
-    }
+  .floating-item {
+    position: static !important;
+    animation: none !important;
+    flex: 0 0 auto;
+  }
 
-    .floating-item {
-        position: static;
-        animation: none;
-    }
-
-    .floating-item img {
-        width: 50px;
-        height: 50px;
-    }
+  .floating-item img {
+    width: 45px;   /* smaller icons to fit better */
+    height: 45px;
+    object-fit: contain;
+  }
 }
 
 /* Ensure text visibility */
@@ -347,175 +365,6 @@ body {
 .hero-visual {
     position: relative;
     height: 400px;
-}
-
-.floating-elements {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.floating-item {
-    position: absolute;
-    animation: float 6s ease-in-out infinite;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-.floating-item img {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .floating-item img {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-item img {
-        width: 45px;
-        height: 45px;
-    }
-}
-
-.floating-item:hover {
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-.floating-item:hover img {
-    filter: brightness(1.1) saturate(1.2);
-}
-
-/* Positioning for all floating items */
-.floating-item:nth-child(1) { /* Docker */
-    top: 15%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.floating-item:nth-child(2) { /* Qdrant */
-    top: 65%;
-    right: 20%;
-    animation-delay: -2s;
-}
-
-.floating-item:nth-child(3) { /* Python */
-    top: 5%;
-    right: 25%;
-    animation-delay: -4s;
-}
-
-.floating-item:nth-child(4) { /* MongoDB */
-    bottom: 25%;
-    left: 25%;
-    animation-delay: -1s;
-}
-
-.floating-item:nth-child(5) { /* Redis */
-    top: 40%;
-    left: 5%;
-    animation-delay: -3s;
-}
-
-.floating-item:nth-child(6) { /* MySQL */
-    bottom: 45%;
-    right: 10%;
-    animation-delay: -5s;
-}
-
-.floating-item:nth-child(7) { /* AWS */
-    top: 8%;
-    left: 45%;
-    animation-delay: -1.5s;
-}
-
-.floating-item:nth-child(8) { /* GCP */
-    bottom: 15%;
-    right: 45%;
-    animation-delay: -3.5s;
-}
-
-.floating-item:nth-child(9) { /* Agent */
-    top: 55%;
-    right: 8%;
-    animation-delay: -2.5s;
-}
-
-.floating-item:nth-child(10) { /* APIs */
-    bottom: 40%;
-    left: 55%;
-    animation-delay: -4.5s;
-}
-
-@keyframes float {
-    0%, 100% { 
-        transform: translateY(0px) rotate(0deg); 
-    }
-    50% { 
-        transform: translateY(-20px) rotate(5deg); 
-    }
-}
-
-/* Add some variety to the animations */
-.floating-item:nth-child(even) {
-    animation-direction: reverse;
-}
-
-.floating-item:nth-child(3n) {
-    animation-duration: 8s;
-}
-
-.floating-item:nth-child(4n) {
-    animation-duration: 5s;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .floating-item img {
-        width: 45px;
-        height: 45px;
-    }
-    
-    /* Hide some items on smaller screens */
-    .floating-item:nth-child(n+7) {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-item img {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .floating-item:nth-child(n+5) {
-        display: none;
-    }
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.animated-bg {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    opacity: 0.1;
 }
 
 @keyframes gradientBG {
