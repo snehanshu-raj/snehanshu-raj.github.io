@@ -367,6 +367,112 @@ body {
     height: 400px;
 }
 
+.-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-item {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.floating-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+
+/* Positioning for all floating items */
+.floating-item:nth-child(1) { /* Docker */
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.floating-item:nth-child(2) { /* Qdrant */
+    top: 65%;
+    right: 20%;
+    animation-delay: -2s;
+}
+
+.floating-item:nth-child(3) { /* Python */
+    top: 5%;
+    right: 25%;
+    animation-delay: -4s;
+}
+
+.floating-item:nth-child(4) { /* MongoDB */
+    bottom: 25%;
+    left: 25%;
+    animation-delay: -1s;
+}
+
+.floating-item:nth-child(5) { /* Redis */
+    top: 40%;
+    left: 5%;
+    animation-delay: -3s;
+}
+
+.floating-item:nth-child(6) { /* MySQL */
+    bottom: 45%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+.floating-item:nth-child(7) { /* AWS */
+    top: 8%;
+    left: 45%;
+    animation-delay: -1.5s;
+}
+
+.floating-item:nth-child(8) { /* GCP */
+    bottom: 15%;
+    right: 45%;
+    animation-delay: -3.5s;
+}
+
+.floating-item:nth-child(9) { /* Agent */
+    top: 55%;
+    right: 8%;
+    animation-delay: -2.5s;
+}
+
+.floating-item:nth-child(10) { /* APIs */
+    bottom: 40%;
+    left: 55%;
+    animation-delay: -4.5s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(5deg); 
+    }
+}
+
+.hero-bg {
+  position: relative; /* if not already */
+  overflow: hidden; /* contain children */
+  height: 150px; /* or desired height */
+}
+
+.animated-bg {
+  position: absolute; /* take out of flow */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  opacity: 0.1;
+  z-index: -1; /* behind content */
+}
+
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
