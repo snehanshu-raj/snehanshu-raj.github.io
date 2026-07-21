@@ -3,153 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRJ's Art & Craft - Creative Portfolio</title>
+    <title>Snehanshu Raj · Art &amp; Craft Gallery</title>
+    <meta name="description" content="A hand-made collection of sketches, paintings, doodles and quilling by Snehanshu Raj.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="art_style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Back to Main Portfolio -->
-    <nav class="art-nav">
-        <a href="index.html" class="back-btn">
-            <i class="fas fa-arrow-left"></i>
-            Back to Portfolio
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="gnav" id="gnav">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left-long"></i>
+            <span>Portfolio</span>
         </a>
-        <div class="nav-logo">
-            <span class="logo-art">🎨</span>
+        <a href="#top" class="gnav-brand">
+            <span class="brand-name">Snehanshu Raj</span>
+            <span class="brand-sub">Gallery</span>
+        </a>
+        <div class="gnav-right">
+            <span class="gnav-year">Est. 2018</span>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="art-hero">
-        <div class="hero-bg">
-            <div class="floating-shapes">
-                <div class="shape shape-1">🎨</div>
-                <div class="shape shape-2">✨</div>
-                <div class="shape shape-3">🖌️</div>
-                <div class="shape shape-4">🌈</div>
-                <div class="shape shape-5">🎭</div>
+    <!-- Hero -->
+    <header class="hero" id="top">
+        <div class="hero-ornament left" aria-hidden="true"></div>
+        <div class="hero-ornament right" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <p class="eyebrow">Selected Works &middot; 2018 - 2026</p>
+            <h1 class="hero-title">Art <span class="amp">&amp;</span> <em>Craft</em></h1>
+            <p class="hero-sub">A hand-made collection of sketches, paintings, doodles, and intricate quilling, where an engineer's precision meets an artist's imagination.</p>
+            <div class="hero-meta">
+                <span class="meta-item"><strong>26</strong> Works</span>
+                <span class="meta-dot"></span>
+                <span class="meta-item"><strong>4</strong> Mediums</span>
+                <span class="meta-dot"></span>
+                <span class="meta-item">Made by hand</span>
             </div>
         </div>
-        <div class="hero-content">
-            <h1 class="art-title">
-                <span class="word word-1">SRJ's</span>
-                <span class="word word-2">Art</span>
-                <span class="word word-3">&</span>
-                <span class="word word-4">Craft</span>
-            </h1>
-            <p class="art-subtitle">Creative expressions from the heart</p>
+        <a href="#gallery" class="scroll-cue" aria-label="Scroll to gallery">
+            <span>View the collection</span>
+            <i class="fas fa-arrow-down-long"></i>
+        </a>
+    </header>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="filters" id="filters">
+            <button class="fbtn active" data-filter="all">All Works</button>
+            <button class="fbtn" data-filter="sketching">Sketching</button>
+            <button class="fbtn" data-filter="painting">Painting</button>
+            <button class="fbtn" data-filter="doodle">Doodle</button>
+            <button class="fbtn" data-filter="craft">Craft</button>
         </div>
+
+        <div class="masonry" id="masonry">
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img1.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="painting"><img src="assets/art/img2.jpeg" alt="Painting" loading="lazy"></figure>
+            <figure class="art-item" data-category="painting"><img src="assets/art/img3.jpeg" alt="Painting" loading="lazy"></figure>
+            <figure class="art-item" data-category="craft"><img src="assets/art/img4.jpeg" alt="Craft" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img5.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img6.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img7.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="craft"><img src="assets/art/img8.jpeg" alt="Craft" loading="lazy"></figure>
+            <figure class="art-item" data-category="painting"><img src="assets/art/img9.jpeg" alt="Painting" loading="lazy"></figure>
+            <figure class="art-item" data-category="doodle"><img src="assets/art/img10.jpeg" alt="Doodle" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img11.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img12.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img13.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img14.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img15.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="doodle"><img src="assets/art/img16.jpeg" alt="Doodle" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img17.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="doodle"><img src="assets/art/img18.jpeg" alt="Doodle" loading="lazy"></figure>
+            <figure class="art-item" data-category="doodle"><img src="assets/art/img19.jpeg" alt="Doodle" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img20.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img21.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="sketching"><img src="assets/art/img22.jpeg" alt="Sketch" loading="lazy"></figure>
+            <figure class="art-item" data-category="craft"><img src="assets/art/img23.jpeg" alt="Craft" loading="lazy"></figure>
+            <figure class="art-item" data-category="painting"><img src="assets/art/img24.jpeg" alt="Painting" loading="lazy"></figure>
+            <figure class="art-item" data-category="doodle"><img src="assets/art/img25.jpeg" alt="Doodle" loading="lazy"></figure>
+            <figure class="art-item" data-category="painting"><img src="assets/art/img26.jpeg" alt="Painting" loading="lazy"></figure>
+        </div>
+
+        <p class="empty-note" id="emptyNote" hidden>No works in this collection yet.</p>
     </section>
 
-    <!-- Art Gallery -->
-    <section class="art-gallery">
-        <div class="gallery-container">
-            <!-- Art pieces will be dynamically loaded here -->
-            <div class="art-item" data-category="sketching" data-size="large">
-                <img src="assets/art/img1.jpeg" alt="Digital Art 1">
-            </div>
-            <div class="art-item" data-category="painting" data-size="medium">
-                <img src="assets/art/img2.jpeg" alt="Painting 1">
-            </div>
-            <div class="art-item" data-category="painting" data-size="small">
-                <img src="assets/art/img3.jpeg" alt="Sketch 1">
-            </div>
-            <div class="art-item" data-category="craft" data-size="medium">
-                <img src="assets/art/img4.jpeg" alt="Craft 1">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="large">
-                <img src="assets/art/img5.jpeg" alt="Digital Art 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img6.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img7.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="craft" data-size="small">
-                <img src="assets/art/img8.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="painting" data-size="small">
-                <img src="assets/art/img9.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="doodle" data-size="small">
-                <img src="assets/art/img10.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img11.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img12.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img13.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img14.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img15.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="doodle" data-size="small">
-                <img src="assets/art/img16.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img17.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="doodle" data-size="small">
-                <img src="assets/art/img18.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="doodle" data-size="small">
-                <img src="assets/art/img19.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img20.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img21.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="sketching" data-size="small">
-                <img src="assets/art/img22.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="craft" data-size="small">
-                <img src="assets/art/img23.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="painting" data-size="small">
-                <img src="assets/art/img24.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="doodle" data-size="small">
-                <img src="assets/art/img25.jpeg" alt="Painting 2">
-            </div>
-            <div class="art-item" data-category="painting" data-size="small">
-                <img src="assets/art/img26.jpeg" alt="Painting 2">
-            </div>
-        </div>
-    </section>
+    <!-- Footer -->
+    <footer class="gfooter">
+        <div class="gfooter-mark">🎨</div>
+        <p class="gfooter-quote">“Creativity is intelligence having fun.”</p>
+        <a href="index.html" class="gfooter-back">
+            <i class="fas fa-arrow-left-long"></i> Return to Portfolio
+        </a>
+        <p class="gfooter-copy">&copy; 2026 Snehanshu Raj &middot; Made with love, by hand.</p>
+    </footer>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox-overlay" id="lightbox">
-        <div class="lightbox-content">
-            <span class="close-btn">&times;</span>
-            <img class="lightbox-img" src="" alt="">
-            <div class="lightbox-info">
-                <h3 class="lightbox-title"></h3>
-                <p class="lightbox-description"></p>
-            </div>
-            <div class="lightbox-nav">
-                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Filter Buttons -->
-    <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="sketching">Sketching</button>
-        <button class="filter-btn" data-filter="painting">Painting</button>
-        <button class="filter-btn" data-filter="doodle">Doodle</button>
-        <button class="filter-btn" data-filter="craft">Craft</button>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-close" id="lbClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+        <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <figure class="lb-stage">
+            <img class="lb-img" id="lbImg" src="" alt="">
+            <figcaption class="lb-caption">
+                <span class="lb-title" id="lbTitle"></span>
+                <span class="lb-counter" id="lbCounter"></span>
+            </figcaption>
+        </figure>
+        <button class="lb-arrow lb-next" id="lbNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <script src="art_script.js"></script>
