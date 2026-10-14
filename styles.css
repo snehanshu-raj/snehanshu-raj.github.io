@@ -877,6 +877,18 @@ img { display: block; max-width: 100%; }
     object-fit: cover;
     display: block;
 }
+.tl-node-monogram {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.cotiviti-mark {
+    color: #fff;
+    background: linear-gradient(145deg, #1c6eb6, #123b73);
+}
 .timeline-item:hover .tl-node {
     transform: scale(1.06);
     box-shadow: 0 10px 26px -6px rgba(0,0,0,0.75), 0 0 0 5px var(--bg), 0 0 22px -4px var(--glow-cyan);
