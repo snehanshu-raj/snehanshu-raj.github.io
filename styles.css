@@ -458,6 +458,14 @@ img { display: block; max-width: 100%; }
 }
 .hero-award strong { font-weight: 800; }
 .hero-award i { color: #7a4a0a; font-size: 0.9rem; }
+.hero-badge-row {
+    flex-basis: 100%;
+}
+.hero-current-role {
+    color: var(--text);
+    background: rgba(56, 245, 166, 0.08);
+    border-color: rgba(56, 245, 166, 0.28);
+}
 .hero-award::after {
     content: '';
     position: absolute;
@@ -877,17 +885,16 @@ img { display: block; max-width: 100%; }
     object-fit: cover;
     display: block;
 }
-.tl-node-monogram {
-    display: grid;
-    place-items: center;
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1;
+.tl-node.cotiviti-logo {
+    left: -18px;
+    top: 18px;
+    width: 98px;
+    height: 54px;
+    border-radius: 12px;
 }
-.cotiviti-mark {
-    color: #fff;
-    background: linear-gradient(145deg, #1c6eb6, #123b73);
+.tl-node.cotiviti-logo img {
+    object-fit: contain;
+    padding: 8px;
 }
 .timeline-item:hover .tl-node {
     transform: scale(1.06);
@@ -1457,6 +1464,13 @@ footer {
     .timeline::before { left: 24px; }
     .timeline-item { padding-left: 68px; }
     .tl-node { width: 48px; height: 48px; border-radius: 12px; }
+    .tl-node.cotiviti-logo {
+        left: -10px;
+        top: 17px;
+        width: 68px;
+        height: 42px;
+    }
+    .tl-node.cotiviti-logo img { padding: 6px; }
     .timeline-card { padding: 20px; }
     .tl-glance { flex-direction: column; gap: 10px; }
 }

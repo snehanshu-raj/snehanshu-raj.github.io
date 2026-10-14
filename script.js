@@ -3,6 +3,7 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    placeExperienceAfterAbout();
     initNavbar();
     initMobileMenu();
     initScrollProgress();
@@ -14,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Primary section order ---------- */
+function placeExperienceAfterAbout() {
+    const about = document.getElementById('about');
+    const experience = document.getElementById('experience');
+    if (about && experience) about.insertAdjacentElement('afterend', experience);
+}
 
 /* ---------- Navbar background on scroll ---------- */
 function initNavbar() {
